@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="css/main.css">  
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <div id="addBlock">
+        <input type="text" id="inputText" v-model="text">
+        <button id="add_button" v-on:click="addItem">Добавить</button>
+    </div>
+    <div id="radioButtonBlock">
+        <template v-for="sort in sorts">
+            <input type="radio" v-on:change="checkedChanged" v-bind:value="sort" v-model="selectedSort">
+            <label>{{sort.name}}</label><br>
+        </template>
+    </div>
+    <ul id="listItems">
+        <li v-for="item in items" v-bind:key="item.id">
+            <span>{{ item.id }}.</span>
+            <span v-show="item.show">{{ item.value }}</span>
+            <input v-show="!item.show" type="text" name="edit_input" v-model="item.editValue">
+            <button id="edit_button" v-show="item.show" v-on:click="item.show = !item.show">Изменить</button>
+            <button id="delete_button" v-show="item.show" v-on:click="deleteItem(item.id)">Удалить</button>
+            <button id="ok_button" v-show="!item.show" v-on:click="editItem(item.id)">Ок</button>
+            <button id="close_button" v-show="!item.show" v-on:click="closeEditItem(item.id)">Отмена</button>
+        </li>
+    </ul>
+    <script src="js/main.js"></script>
+</body>
+</html>

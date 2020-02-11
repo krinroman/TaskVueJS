@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+button{
+    padding: 2px;
+}
+
+span{
+    font-size: 24px;
+}
+
+input{
+    font-size: 18px;
+}
+
+#addBlock{
+    display: inline-flex;
+    align-items: center;
+    margin: 50px 0 20px 50px;
+}
+
+#add_button{
+    margin-left: 10px;
+}
+
+#listItems{
+    list-style-type: none;
+    margin-left: 50px;
+}
+
+#radioButtonBlock{
+    margin: 0 0 20px 50px;
+    font-size: 24px;
+}
+
